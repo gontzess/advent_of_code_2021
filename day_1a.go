@@ -1,41 +1,41 @@
 package main
 
 import (
-  "fmt"
-  "strings"
-  "strconv"
+	"fmt"
+	"strconv"
+	"strings"
 )
 
 func main() {
-  depths := cleanData(steveData())
-  fmt.Println(countIncreases(depths))
+	depths := cleanData(steveData())
+	fmt.Println(countIncreases(depths))
 }
 
 func countIncreases(depths []int) int {
-  increases := 0
+	increases := 0
 
-  for i := 1; i < len(depths); i++ {
-    if depths[i] > depths[i-1] {
-      increases++
-    }
-  }
+	for i := 1; i < len(depths); i++ {
+		if depths[i] > depths[i-1] {
+			increases++
+		}
+	}
 
-  return increases
+	return increases
 }
 
 func cleanData(inputStr string) []int {
-  numStrings := strings.Fields(inputStr)
-  cleanInts := make([]int, len(numStrings))
+	numStrings := strings.Fields(inputStr)
+	cleanInts := make([]int, len(numStrings))
 
-  for i, str := range numStrings {
-    cleanInts[i], _ = strconv.Atoi(str)
-  }
+	for i, str := range numStrings {
+		cleanInts[i], _ = strconv.Atoi(str)
+	}
 
-  return cleanInts
+	return cleanInts
 }
 
 func sampleData() string {
-  return `199
+	return `199
   200
   208
   210
@@ -48,7 +48,7 @@ func sampleData() string {
 }
 
 func steveData() string {
-  return `100
+	return `100
   125
   124
   127

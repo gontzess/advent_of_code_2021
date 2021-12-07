@@ -6,8 +6,6 @@ import (
 	"strings"
 )
 
-var totalFish int = 0
-
 type Fish struct {
 	DoB           int
 	childrenCount int64
